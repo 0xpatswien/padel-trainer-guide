@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
   const painPoints = [
     {
@@ -193,14 +195,25 @@ export default function Home() {
             One playbook. One evening to set it up. Long-term time back.
           </h2>
           <p className="mt-6 text-6xl font-black text-slate-950">€19</p>
-          <a
-            className="mt-8 inline-flex min-h-14 items-center justify-center rounded-full bg-[#16a34a] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700"
-            href="https://gumroad.com/l/padel-trainer-ai-playbook"
-          >
-            Buy on Gumroad
-          </a>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <a
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-[#16a34a] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-green-600/20 transition hover:bg-green-700"
+              href="https://gumroad.com/l/padel-trainer-ai-playbook"
+            >
+              Buy with Card →
+            </a>
+            <button
+              className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-[#16a34a] bg-white px-8 py-4 text-base font-semibold text-[#16a34a] transition hover:bg-green-50"
+              onClick={() => {
+                navigator.clipboard?.writeText('0xa8ea043e5a98c1c54a476487b299733181501c63');
+                alert('Wallet address copied!\n\nSend exactly 21 USDC on Base network to:\n0xa8ea043e5a98c1c54a476487b299733181501c63\n\nThen email sapo.agency@gmail.com with your transaction hash to receive your guide instantly.');
+              }}
+            >
+              Pay with Crypto (USDC)
+            </button>
+          </div>
           <p className="mt-4 text-sm leading-6 text-slate-600">
-            Instant access to the guide, templates, and setup checklist.
+            Card: instant download via Gumroad · Crypto: 21 USDC on Base → sapo.agency@gmail.com
           </p>
         </div>
       </section>
